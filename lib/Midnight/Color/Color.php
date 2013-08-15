@@ -2,11 +2,13 @@
 
 namespace Midnight\Color;
 
+use Zend\Console\ColorInterface;
+
 /**
  * Class Image
  * @package Midnight\Color
  */
-class Color
+class Color implements ColorInterface
 {
     /**
      * @var int
