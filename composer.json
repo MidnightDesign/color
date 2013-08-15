@@ -1,0 +1,16 @@
+{
+    "name": "midnight/color",
+    "description": "A color calculation library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rudolph Gottesheim",
+            "email": "r.gottesheim@loot.at"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Midnight\\Color\\": "lib/"
+        }
+    }
+}

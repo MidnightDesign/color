@@ -1,0 +1,6 @@
+/atlassian-ide-plugin.xml
+/.idea/
+/composer.phar
+/composer.lock
+/vendor/
+/demo/
