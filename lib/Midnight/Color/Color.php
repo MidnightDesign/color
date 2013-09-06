@@ -97,4 +97,16 @@ class Color implements ColorInterface
     {
         $this->r = $r;
     }
+
+    public function toHex($include_hash = true)
+    {
+        $c = array();
+        $c['r'] = $this->getR();
+        $c['g'] = $this->getG();
+        $c['b'] = $this->getB();
+        foreach ($c as $key => $val) {
+            $c[$key] = str_pad(dechex($val), 2, '0', STR_PAD_LEFT);
+        }
+        return ($include_hash ? '#' : '') . join('', $c);
+    }
 }
