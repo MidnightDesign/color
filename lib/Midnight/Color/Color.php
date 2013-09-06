@@ -2,8 +2,6 @@
 
 namespace Midnight\Color;
 
-use Zend\Console\ColorInterface;
-
 /**
  * Class Image
  * @package Midnight\Color
@@ -28,6 +26,28 @@ class Color implements ColorInterface
         $this->setR($r);
         $this->setG($g);
         $this->setB($b);
+    }
+
+    /**
+     * @param string $hex
+     * @return Color
+     */
+    public static function fromHex($hex)
+    {
+        $hex = str_replace("#", "", $hex);
+        if (strlen($hex) === 3) {
+            $r = str_repeat(substr($hex, 0, 1), 2);
+            $g = str_repeat(substr($hex, 1, 1), 2);
+            $b = str_repeat(substr($hex, 2, 1), 2);
+        } elseif (strlen($hex) === 6) {
+            $r = substr($hex, 0, 2);
+            $g = substr($hex, 2, 2);
+            $b = substr($hex, 4, 2);
+        }
+        $r = hexdec($r);
+        $g = hexdec($g);
+        $b = hexdec($b);
+        return new Color($r, $g, $b);
     }
 
     /**
